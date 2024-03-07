@@ -1,0 +1,4 @@
+.pagination {
+    transform: none!important;
+    --swiper-pagination-color: #FF4500;
+}

@@ -1,0 +1,27 @@
+---
+import { getArticle } from "@/dao/xarticle";
+import Layout from "@/layouts/Layout.astro";
+import Card from "./_Card";
+
+const { id } = Astro.params;
+
+const article = await getArticle(id || "");
+
+if(!article) return new Response(null, { status: 404 });
+
+---
+
+<Layout title={article.title}>
+    <div class="tw-max-w-md tw-mx-auto">
+        <Card images={article.images} client:load />
+        <article class="tw-whitespace-pre-wrap tw-p-5">
+            { article.content }
+        </article>
+    </div>
+</Layout>
+
+<style>
+    article {
+
+    }
+</style>
