@@ -14,14 +14,9 @@ if(!article) return new Response(null, { status: 404 });
 <Layout title={article.title}>
     <div class="tw-max-w-md tw-mx-auto">
         <Card images={article.images} client:load />
-        <article class="tw-whitespace-pre-wrap tw-p-5">
-            { article.content }
+        <article class="tw-px-5 tw-pt-5 tw-pb-8">
+            <header class="tw-text-3xl tw-pb-5">{article.title}</header>
+            <div class="tw-whitespace-pre-wrap">{ article.content }</div>
         </article>
     </div>
 </Layout>
-
-<style>
-    article {
-
-    }
-</style>

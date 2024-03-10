@@ -2,3 +2,7 @@
     transform: none!important;
     --swiper-pagination-color: #FF4500;
 }
+
+.swiper-wrapper {
+    align-items: center;
+}
